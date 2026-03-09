@@ -79,6 +79,57 @@ ungrouped = {
     ),
     "Pixtral-12B": partial(Pixtral, model_path="mistralai/Pixtral-12B-2409"),
     "Falcon2-VLM-11B": partial(Falcon2VLM, model_path="tiiuae/falcon-11B-vlm"),
+    # "ming": partial(MingUniVisionInfer, model_name_or_path="/root/autodl-tmp/home/tongyujun/models/Ming-UniVision-16B-A3B"),
+    # "ming_replace_refine_psnr": partial(MingUniVisionInfer_REPLACE, model_name_or_path="/root/autodl-tmp/home/tongyujun/models/Ming-UniVision-16B-A3B"),
+    # "ming_concat": partial(MingUniVisionInfer_CONCAT, model_name_or_path="/root/autodl-tmp/home/tongyujun/models/Ming-UniVision-16B-A3B"),
+    "bagel": partial(BagelInfer, model_name_or_path="/data/tongyujun/uni-tts/models/BAGEL-7B-MoT"),
+    "bagel_ab": partial(BagelInfer, model_name_or_path="/data/tongyujun/uni-tts/models/BAGEL-7B-MoT"),
+    "bagel1": partial(BagelInfer, model_name_or_path="/data/tongyujun/uni-tts/models/BAGEL-7B-MoT"),
+    "bagel2": partial(BagelInfer, model_name_or_path="/data/tongyujun/uni-tts/models/BAGEL-7B-MoT"),
+
+    "bagel_prompt": partial(BagelInfer_concat, model_name_or_path="/data/tongyujun/uni-tts/models/BAGEL-7B-MoT"),
+    "bagel_prompt1": partial(BagelInfer_concat, model_name_or_path="/data/tongyujun/uni-tts/models/BAGEL-7B-MoT"),
+
+    "bagel_concat": partial(BagelInfer_concat, model_name_or_path="/data/tongyujun/uni-tts/models/BAGEL-7B-MoT"),
+    "bagel_zoomin": partial(BagelInfer_zoomin, model_name_or_path="/data/tongyujun/uni-tts/models/BAGEL-7B-MoT"),
+    "bagel_zoomin_think": partial(BagelInfer_zoomin, model_name_or_path="/data/tongyujun/uni-tts/models/BAGEL-7B-MoT"),
+    "bagel_zoomin_thinkv1": partial(BagelInfer_zoomin, model_name_or_path="/data/tongyujun/uni-tts/models/BAGEL-7B-MoT"),
+    "bagel_zoomin_thinkv2": partial(BagelInfer_zoomin, model_name_or_path="/data/tongyujun/uni-tts/models/BAGEL-7B-MoT"),
+    "bagel_zoomin_thinkv3": partial(BagelInfer_zoomin, model_name_or_path="/data/tongyujun/uni-tts/models/BAGEL-7B-MoT"),
+    "bagel_zoomin_thinkv4": partial(BagelInfer_zoomin, model_name_or_path="/data/tongyujun/uni-tts/models/BAGEL-7B-MoT"),
+    "bagel_zoomin_thinkv5": partial(BagelInfer_zoomin, model_name_or_path="/data/tongyujun/uni-tts/models/BAGEL-7B-MoT"),
+    "bagel_zoomin_thinkv6": partial(BagelInfer_zoomin, model_name_or_path="/data/tongyujun/uni-tts/models/BAGEL-7B-MoT"),
+    "bagel_zoomin_thinkv7": partial(BagelInfer_zoomin, model_name_or_path="/data/tongyujun/uni-tts/models/BAGEL-7B-MoT"),
+    "bagel_zoomin_thinkv8": partial(BagelInfer_zoomin, model_name_or_path="/data/tongyujun/uni-tts/models/BAGEL-7B-MoT"),
+    "bagel_zoomin_thinkv9": partial(BagelInfer_zoomin, model_name_or_path="/data/tongyujun/uni-tts/models/BAGEL-7B-MoT"),
+    "bagel_think": partial(BagelInfer_think, model_name_or_path="/data/tongyujun/uni-tts/models/BAGEL-7B-MoT"),
+
+
+
+    "bagel_zoomin_thinkbaseline": partial(BagelInfer_zoomin, model_name_or_path="/data/tongyujun/uni-tts/models/BAGEL-7B-MoT"),
+
+
+    "bagel_zoomin_think_onlyimage": partial(BagelInfer_zoomin, model_name_or_path="/data/tongyujun/uni-tts/models/BAGEL-7B-MoT"),
+
+    "bagel_gpt": partial(BagelInfer_GPT, model_name_or_path="/data/tongyujun/uni-tts/models/BAGEL-7B-MoT"),
+    "bagel_gptv1": partial(BagelInfer_GPT, model_name_or_path="/data/tongyujun/uni-tts/models/BAGEL-7B-MoT"),
+    "bagel_gptv2": partial(BagelInfer_GPT, model_name_or_path="/data/tongyujun/uni-tts/models/BAGEL-7B-MoT"),
+    "bagel_gptv3": partial(BagelInfer_GPT, model_name_or_path="/data/tongyujun/uni-tts/models/BAGEL-7B-MoT"),
+    "bagel_gptv4": partial(BagelInfer_GPT, model_name_or_path="/data/tongyujun/uni-tts/models/BAGEL-7B-MoT"),
+    "bagel_gptv5": partial(BagelInfer_GPT, model_name_or_path="/data/tongyujun/uni-tts/models/BAGEL-7B-MoT"),
+    "bagel_gptv6": partial(BagelInfer_GPT, model_name_or_path="/data/tongyujun/uni-tts/models/BAGEL-7B-MoT"),
+    "bagel_gptv7": partial(BagelInfer_GPT, model_name_or_path="/data/tongyujun/uni-tts/models/BAGEL-7B-MoT"),
+    "bagel_gptv8": partial(BagelInfer_GPT, model_name_or_path="/data/tongyujun/uni-tts/models/BAGEL-7B-MoT"),
+
+    "bagel_seperate_ab_30": partial(BagelInfer_seperate, model_name_or_path="/data/tongyujun/uni-tts/models/BAGEL-7B-MoT"),
+    "bagel_prompt_gen": partial(BagelInfer_prompt_gen, model_name_or_path="/data/tongyujun/uni-tts/models/BAGEL-7B-MoT"),
+    "gpt_prompt_gen": partial(BagelInfer_prompt_gen, model_name_or_path="/data/tongyujun/uni-tts/models/BAGEL-7B-MoT"),
+    "bagel_prompt_gen1": partial(BagelInfer_prompt_gen, model_name_or_path="/data/tongyujun/uni-tts/models/BAGEL-7B-MoT"),
+    "gemini_prompt_gen": partial(BagelInfer_prompt_gen, model_name_or_path="/data/tongyujun/uni-tts/models/BAGEL-7B-MoT"),
+
+
+    # "bagel_replace_psnr": partial(BagelInfer_replace, model_name_or_path="/data/tongyujun/uni-tts/models/BAGEL-7B-MoT"),
+
 }
 
 o1_key = os.environ.get('O1_API_KEY', None)
@@ -127,7 +178,7 @@ api_models = {
     # GPT
     "GPT4V": partial(
         GPT4V,
-        model="gpt-4-1106-vision-preview",
+        model="gpt-4-1106-preview",
         temperature=0,
         img_size=512,
         img_detail="low",
@@ -279,6 +330,35 @@ api_models = {
         max_tokens=2**14,
         timeout=300,
     ),
+    "gpt-5.1": partial(
+        GPT4V,
+        model="gpt-5.1",
+        img_detail="high",
+        retry=3,
+        verbose=False,
+        max_tokens=2**14,
+        timeout=300,
+    ),
+    "gpt-4o": partial(
+        GPT4V,
+        model="gpt-4o",
+        img_detail="high",
+        retry=3,
+        verbose=False,
+        max_tokens=2**14,
+        timeout=300,
+    ),
+    # "Gemini-3-pro": partial(
+    #     GPT4V,
+    #     model="gemini-3-pro-preview",
+    #     img_detail="high",
+    #     retry=3,
+    #     verbose=False,
+    #     max_tokens=2**14,
+    #     timeout=300,
+    #     key='sk-ZmMmKKNPeShHLRKwHjXA68GXN2AmjHvnYEgnYDYqtb9gcQbo'
+    # ),
+    
     # Gemini
     "GeminiPro1-0": partial(
         Gemini, model="gemini-1.0-pro", temperature=0, retry=10
@@ -295,6 +375,12 @@ api_models = {
     "GeminiFlash1-5-002": partial(
         GPT4V, model="gemini-1.5-flash-002", temperature=0, retry=10
     ),  # Internal Use Only
+    "Gemini-3-pro": partial(
+        GPT4V, model="gemini-3-pro-all", temperature=0, retry=10
+    ),
+    "Gemini-2.5-pro": partial(
+        GPT4V, model="gemini-2.5-pro-nothinking", temperature=0, retry=10
+    ),
     "GeminiFlash2-0": partial(
         Gemini, model="gemini-2.0-flash", temperature=0, retry=10
     ),
@@ -307,11 +393,22 @@ api_models = {
     "GeminiPro2-5": partial(
         Gemini, model="gemini-2.5-pro", temperature=0, retry=10
     ),
+
+    #DS
+    "DS-vl": partial(
+        GPT4V, model="deepseek-vl2", temperature=0, retry=10
+    ),
     
     # Qwen-VL
     "QwenVLPlus": partial(QwenVLAPI, model="qwen-vl-plus", temperature=0, retry=10),
     "QwenVLMax": partial(QwenVLAPI, model="qwen-vl-max", temperature=0, retry=10),
     "QwenVLMax-250408": partial(QwenVLAPI, model="qwen-vl-max-2025-04-08", temperature=0, retry=10),
+    "Qwen3VLPlus": partial(QwenVLAPI, model="qwen3-vl-plus", temperature=0, retry=10, key='sk-3a658ecf56284de185b5960e9b059745'),
+    "Qwen3VL-A3B-30B": partial(QwenVLAPI, model="qwen3-vl-30b-a3b-instruct", temperature=0, retry=10, key='sk-3a658ecf56284de185b5960e9b059745'),
+    "Qwen3vl-235b-a22b": partial(QwenVLAPI, model="qwen3-vl-235b-a22b-instruct", temperature=0, retry=10, key='sk-3a658ecf56284de185b5960e9b059745'),
+    "Qwen3vl-8b": partial(QwenVLAPI, model="qwen3-vl-8b-instruct", temperature=0, retry=10, key='sk-3a658ecf56284de185b5960e9b059745'),
+    "Qwen2.5vl-7b": partial(QwenVLAPI, model="qwen2.5-vl-7b-instruct", temperature=0, retry=10, key='sk-3a658ecf56284de185b5960e9b059745'),
+    "Qwen2.5vl-72b": partial(QwenVLAPI, model="qwen2.5-vl-72b-instruct", temperature=0, retry=10, key='sk-3a658ecf56284de185b5960e9b059745'),
 
     # Reka
     "RekaEdge": partial(Reka, model="reka-edge-20240208"),
@@ -1341,7 +1438,7 @@ qwen2vl_series = {
     ),
     "Qwen2.5-VL-7B-Instruct": partial(
         Qwen2VLChat,
-        model_path="Qwen/Qwen2.5-VL-7B-Instruct",
+        model_path="/root/autodl-tmp/home/tongyujun/models/Qwen2.5-VL-7B-Instruct",
         min_pixels=1280 * 28 * 28,
         max_pixels=16384 * 28 * 28,
         use_custom_prompt=False,

@@ -83,7 +83,8 @@ from .mmhelix import MMHELIX
 from .medqbench_mcq import MedqbenchMCQDataset
 from .medqbench_caption import MedqbenchCaptionDataset
 from .medqbench_paired_description import MedqbenchPairedDescriptionDataset
-
+from .myvqabench import MyVQABench
+from .visthink import VisThinkBench
 
 class ConcatDataset(ImageBaseDataset):
     # This dataset takes multiple dataset names as input and aggregate them into a single dataset.
@@ -231,7 +232,7 @@ TEXT_DATASET = [
 ]
 
 CUSTOM_DATASET = [
-    CustomMCQDataset, CustomVQADataset, CustomTextMCQDataset
+    CustomMCQDataset, CustomVQADataset, CustomTextMCQDataset, MyVQABench, VisThinkBench
 ]
 
 DATASET_COLLECTION = [ConcatDataset, ConcatVideoDataset]

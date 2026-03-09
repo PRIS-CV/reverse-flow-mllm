@@ -98,22 +98,45 @@ class BaseModel:
         else:
             return None
 
-    def generate(self, message, dataset=None):
-        """Generate the output message.
+    def generate(self, message, dataset=None,categories=None, **kwargs):
+        """Generate the output messages for a batch.
 
         Args:
-            message (list[dict]): The input message.
+            message (list): The batch of input messages. 
+                            (e.g., list[list[dict]])
             dataset (str, optional): The name of the dataset. Defaults to None.
 
         Returns:
-            str: The generated message.
+            list[str]: The list of generated messages.
         """
-        assert self.check_content(message) in ['str', 'dict', 'liststr', 'listdict'], f'Invalid input type: {message}'
-        message = self.preproc_content(message)
-        assert message is not None and self.check_content(message) == 'listdict'
-        for item in message:
-            assert item['type'] in self.allowed_types, f'Invalid input type: {item["type"]}'
-        return self.generate_inner(message, dataset)
+        
+        # 确保 'message' 是一个列表 (即批次)
+        assert isinstance(message, list), f"Input 'message' should be a list (batch) but got {type(message)}"
+        
+        preprocessed_batch = []
+        
+        # 迭代批次中的每一条
+        for single_message in message:
+            # --- 以下是您原始的逐条处理逻辑 ---
+            assert self.check_content(single_message) in ['str', 'dict', 'liststr', 'listdict'], \
+                f'Invalid input type in batch: {single_message}'
+            
+            processed_msg = self.preproc_content(single_message)
+            
+            assert processed_msg is not None and self.check_content(processed_msg) == 'listdict', \
+                f'Preprocessing failed for item in batch: {single_message}'
+                
+            for item in processed_msg:
+                assert item['type'] in self.allowed_types, f'Invalid input type: {item["type"]}'
+            # --- 原始逻辑结束 ---
+            
+            # 将处理好的单条消息添加到新的批次中
+            preprocessed_batch.append(processed_msg)
+
+        # 'preprocessed_batch' 现在是一个包含了所有处理后消息的列表
+        # 'generate_inner' 必须能够处理这个批次并返回一个响应列表
+   
+        return self.generate_inner(preprocessed_batch, dataset, categories, **kwargs)
 
     def chat(self, messages, dataset=None):
         """The main function for multi-turn chatting. Will call `chat_inner` with the preprocessed input messages."""

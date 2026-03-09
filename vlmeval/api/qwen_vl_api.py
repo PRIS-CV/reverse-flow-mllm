@@ -132,7 +132,7 @@ class QwenVLWrapper(BaseAPI):
                  proxy: str = None,
                  **kwargs):
 
-        assert model in ['qwen-vl-plus', 'qwen-vl-max']
+        # assert model in ['qwen-vl-plus', 'qwen-vl-max']
         self.model = model
         import dashscope
         self.fail_msg = 'Failed to obtain answer via API. '

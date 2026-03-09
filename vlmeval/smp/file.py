@@ -69,7 +69,7 @@ def localize_df(data, dname, nproc=32):
 def LMUDataRoot():
     if 'LMUData' in os.environ and osp.exists(os.environ['LMUData']):
         return os.environ['LMUData']
-    home = osp.expanduser('~')
+    home = osp.expanduser('/data/tongyujun/uni-tts/')
     root = osp.join(home, 'LMUData')
     os.makedirs(root, exist_ok=True)
     return root

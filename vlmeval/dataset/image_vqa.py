@@ -2095,7 +2095,7 @@ class QSpatial(ImageBaseDataset):
     # NOTE: To evaluate Q-Spatial-ScanNet, you need to get the permission from ScanNet website
     # Once you get the permission, you can use the helper code here to download and extract necessary images:
     # https://github.com/andrewliao11/Q-Spatial-Bench-code?tab=readme-ov-file#for-qspatial_scannet
-    qspatial_root = "TO_BE_REPLACED_WITH_THE_PATH_TO_QSPATIAL_DATASET"
+    qspatial_root = "/root/autodl-tmp/home/tongyujun/LMUData/images/QSpatial"
     url = "https://raw.githubusercontent.com/andrewliao11/Q-Spatial-Bench-code/refs/heads/main/prompt_templates/"
 
     def post_build(self, dataset):
@@ -2152,7 +2152,7 @@ class QSpatial(ImageBaseDataset):
         from datasets import load_dataset
 
         hf_dataset = load_dataset("andrewliao11/Q-Spatial-Bench",
-                                  split=dataset)
+                                  split=dataset,cache_dir=self.qspatial_root)
         df = hf_dataset.to_pandas()
 
         df.reset_index(drop=True, inplace=True)

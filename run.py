@@ -178,7 +178,7 @@ You can launch the evaluation by setting either --data and --model or --config.
     # Infer + Eval or Infer Only
     parser.add_argument('--mode', type=str, default='all', choices=['all', 'infer', 'eval'])
     # API Kwargs, Apply to API VLMs and Judge API LLMs
-    parser.add_argument('--api-nproc', type=int, default=4, help='Parallel API calling')
+    parser.add_argument('--api-nproc', type=int, default=15, help='Parallel API calling')
     parser.add_argument('--retry', type=int, default=None, help='retry numbers for API VLMs')
     parser.add_argument('--judge-args', type=str, default=None, help='Judge arguments in JSON format')
     # Explicitly Set the Judge Model
@@ -195,7 +195,9 @@ You can launch the evaluation by setting either --data and --model or --config.
     parser.add_argument(
         '--use-vllm', action='store_true', help='use vllm to generate, the flag is only supported in Llama4 for now')
     parser.add_argument('--use-verifier', action='store_true', help='use verifier to evaluate')
-
+    
+    #batch size for inference
+    parser.add_argument('--batch-size', type=int, default=16, help='batch size for inference')
     args = parser.parse_args()
     return args
 
@@ -345,7 +347,8 @@ def main():
                             verbose=args.verbose,
                             api_nproc=args.api_nproc,
                             ignore_failed=args.ignore,
-                            use_vllm=args.use_vllm)
+                            use_vllm=args.use_vllm,
+                            batch_size=args.batch_size)
 
                 # Set the judge kwargs first before evaluation or dumping
 

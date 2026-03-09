@@ -109,3 +109,18 @@ from .qtunevl import (
     QTuneVLChat,
 )
 from .logics import Logics_Thinking
+
+
+# from .mingunivision import MingUniVisionInfer
+# from .mingunivision import MingUniVisionInfer_REPLACE
+# from .mingunivision import MingUniVisionInfer_CONCAT
+
+from .bagel.Bagelinfer import BagelInfer
+from .bagel.Bagelinfer_concat import BagelInfer_concat
+from .bagel.Bagelinfer_concat_zoomin import BagelInfer_zoomin
+
+from .bagel.Bagelinfer_GPT import BagelInfer_GPT
+from .bagel.Bagelinfer_think import BagelInfer_think
+from .bagel.Bagelinfer_concat_seperate import BagelInfer_seperate
+from .bagel.Bagelinfer_prompt_gen import BagelInfer_prompt_gen
+# from .bagel.Bagelinfer_replace import BagelInfer_replace
